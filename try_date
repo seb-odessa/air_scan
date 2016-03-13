@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [ $# -ne 1 ] ; then
+    echo "Usage:"
+    echo "	$0 hash|hashfile|hccapfile"
+    exit
+fi
+
+geneate_words(){
+    for del in "" " " "-" "_" "." "/" ":" "\\" "," "|" "!" "@" "#" "$" "%" "^" "&" "*" "+" "~" "=" ; do
+        for year in {1900..2020}; do
+	    for month in {01..12}; do
+        	for day in {01..31}; do
+            	    echo "$year$del$month$del$day"
+            	    echo "$day$del$month$del$year"
+    		done
+	    done
+	done
+    done
+}
+
+CURRENT=$(pwd)
+cd $(dirname $(which cudaHashcat64.bin))
+geneate_words | ./cudaHashcat64.bin -m 2500 ${CURRENT}/${1} && cat cudaHashcat.pot >> $CURRENT/cudaHashcat.pot
+cd $CURRENT
+
+
+

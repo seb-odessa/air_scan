@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -ne 1 ] ; then
+    echo "Usage:"
+    echo "	$0 hash|hashfile|hccapfile"
+    exit
+fi
+
+CURRENT=$(pwd)
+cd $(dirname $(which cudaHashcat64.bin))
+crunch 8 8 1234567890 | ./cudaHashcat64.bin -m 2500 ${CURRENT}/${1} && cat cudaHashcat.pot >> $CURRENT/cudaHashcat.pot
+cd $CURRENT
+
+
+
