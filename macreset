@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo sudo ifconfig ${1} down
+sudo ifconfig ${1} down
+#sudo iwconfig ${1} power off
+#sudo iwconfig ${1} txpower 22
+echo sudo macchanger -A ${1}
+sudo macchanger -a ${1}
+echo sudo ifconfig ${1} up
+sudo ifconfig ${1} up

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for RECORD in $(iwconfig 2>/dev/null | grep ${1} | cut -f 1 -d ' ');  do
+    echo ${RECORD}
+done

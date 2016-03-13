@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case "$1" in
+  start)
+    sudo service network-manager start
+
+    ;;
+  stop)
+    sudo service network-manager stop
+    sudo service wpa_supplicant stop
+    sudo service avahi-daemon stop
+    sudo airmon-ng check kill
+    ;;
+  *)
+    echo "Usage: ${0} {start|stop}"
+    exit 1
+esac
