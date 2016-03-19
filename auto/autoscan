@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo besside-ng mon0
+sudo besside-ng -c 6 mon0
 
 #sudo besside-ng -W -c 1 -b 20:CF:30:88:BE:C5 mon0
 #sudo besside-ng -W -c 1 -b DA:5D:E2:4C:D3:EE mon0
