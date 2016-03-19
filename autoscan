@@ -1,5 +1,0 @@
-#!/bin/bash
-
-sudo besside-ng -W mon0
-
-

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+ARCH=$(uname -m)
+if [ "$ARCH" = "i686" ]; then
+ ARCH=32
+fi
+if [ "$ARCH" = "x86_64" ]; then
+ ARCH=64
+fi
+
+HASHCAT_PATH=$(which oclHashcat${ARCH}.bin || which cudaHashcat${ARCH}.bin || which hashcat-cli${ARCH}.bin)
+
+if [[ ! $HASHCAT_PATH ]]; then
+    echo "The HashCat tool required!"
+    echo "Check the https://hashcat.net/oclhashcat/"
+    exit -1
+fi
+
+CURRENT=$(pwd)
+HASHCAT=$(basename ${HASHCAT_PATH})
+HASHCAT_HOME=$(dirname ${HASHCAT_PATH})
+
+if [[ ! ${1} ]] ; then
+    echo "Usage:"
+    echo "	$0 hash|hashfile|hccapfile"
+#    exit -1
+fi
+
+cd $HASHCAT_HOME
+${HASHCAT} -m 2500 --quiet ${CURRENT}/${1} ${CURRENT}/${2} >> ${CURRENT}/result.txt
+cd $CURRENT
+
+
+

@@ -1,15 +1,10 @@
 #!/bin/bash
 
-MON_IF=Mode:Monitor
-for IF in $(. find_matched ${MON_IF});  do
-    echo sudo airmon-ng stop ${IF}
+for IF in $(. lib/iw Mode:Monitor);  do
     sudo airmon-ng stop ${IF}
 done
 
-
-WLAN_IF=ESSID:off/any
-for IF in $(. find_matched ${WLAN_IF});  do
-    echo ifconfig  ${IF} down
+for IF in $(. lib/iw ESSID:off/any);  do
     sudo ifconfig  ${IF} down
 done
 

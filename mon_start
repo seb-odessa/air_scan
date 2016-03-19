@@ -1,18 +1,11 @@
 #!/bin/bash
 
-#sudo airmon-ng check kill
-
-WLAN_IF=ESSID:off/any
-for IF in $(. find_matched ${WLAN_IF});  do
-    echo . macreset  ${IF}
+for IF in $(. lib/iw ESSID:off/any);  do
     . macreset ${IF}
-    echo sudo airmon-zc start ${IF}
-    sudo airmon-ng start ${IF} $1
+    sudo airmon-ng start ${IF}
 done
 
-MON_IF=encap:UNSPEC
-for IF in $(. find_matched ${MON_IF});  do
-    echo . macreseth  ${IF}
+for IF in $(. lib/iw encap:UNSPEC);  do
     . macreset  ${IF}
 done
 
