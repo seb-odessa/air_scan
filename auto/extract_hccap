@@ -1,0 +1,3 @@
+#!/bin/bash
+
+aircrack-ng -J ../handshakes/$1 wpa.cap
