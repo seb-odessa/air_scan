@@ -1,10 +1,12 @@
 # SSID              | KEY                                    | BSSID             | MAC filter
+BlackMesaLab        | Got WPA handshake                      | 30:b5:c2:3a:fb:d2 | 
+TP-LINK_5A6FDA      | Got WPA handshake                      | 30:b5:c2:5a:6f:da | 
+katya               | Got WPA handshake                      | 14:d6:4d:b8:29:5e | 
+user-69866          | Got WPA handshake                      | 14:cc:20:76:ed:78 | 
+user-25330          | Got WPA handshake                      | f4:f2:6d:4b:40:c6 | 
+Vodyanoy            | Got WPA handshake                      | 24:7f:3c:b9:30:80 | 
+Serega750           | Got WPA handshake                      | 64:70:02:f8:d0:a8 | 
+happy               | Got WPA handshake                      | f4:ec:38:bc:2d:1c | 
+Maka_Dubai          | Got WPA handshake                      | 14:cc:20:88:7c:dc | 
+TP-LINK_2.4GHz_E72F21| Got WPA handshake                      | a4:2b:b0:e7:2f:21 | 
 Rolan               | Got WPA handshake                      | 1c:7e:e5:93:c8:58 | 
-Norma+092           | Got WPA handshake                      | a0:f3:c1:f7:58:56 | 
-dima                | Got WPA handshake                      | c4:6e:1f:af:e0:92 | 
-Network-64700283eaa8| Got WPA handshake                      | 64:70:02:83:ea:a8 | 
-zezya               | Got WPA handshake                      | e8:94:f6:b0:14:ae | 
-Dlink               | Got WPA handshake                      | 1c:7e:e5:38:5e:48 | 
-Dires               | Got WPA handshake                      | 64:66:b3:12:2f:90 | 
-user-72040          | Got WPA handshake                      | 14:cc:20:0a:e9:d6 | 
-WL520GC_78RK        | Got WPA handshake                      | 20:cf:30:88:be:c5 | 
