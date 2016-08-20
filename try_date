@@ -7,12 +7,13 @@ if [ $# -ne 1 ] ; then
 fi
 
 geneate_words(){
-    for del in "" " " "-" "_" "." "/" ":" "\\" "," "|" "!" "@" "#" "$" "%" "^" "&" "*" "+" "~" "=" ; do
-        for year in {1900..2020}; do
+    for del in "" "." "/" "\\" ":" ; do
+        for year in {1950..2016}; do
 	    for month in {01..12}; do
         	for day in {01..31}; do
             	    echo "$year$del$month$del$day"
             	    echo "$day$del$month$del$year"
+            	    echo "$month$del$day$del$year"
     		done
 	    done
 	done
