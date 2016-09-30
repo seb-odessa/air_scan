@@ -1,0 +1,19 @@
+#!/bin/bash
+
+geneate_words(){
+    for del in "" "." "/" ; do
+        for year in {1900..2020}; do
+	    for month in {01..12}; do
+        	for day in {01..31}; do
+            	    echo "${day}${del}${month}${del}${year}"
+            	    echo "${year}${del}${month}${del}${day}"
+    		done
+	    done
+	done
+    done
+}
+
+geneate_words > ../dict/dates.txt
+
+
+

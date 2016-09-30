@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 1 ] ; then
+    echo "Usage:"
+    echo "	$0 hash|hashfile|hccapfile"
+    exit
+fi
+
+HASHCAT=hashcat-cli64.bin
+CURRENT=$(pwd)
+cd ~/bin/hashcat
+./$HASHCAT -m 2500 ${CURRENT}/${1} ${CURRENT}/dict/dates.txt && cat hashcat.pot >> $CURRENT/cudaHashcat.pot
+cd $CURRENT
+
+
+
