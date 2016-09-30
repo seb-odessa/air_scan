@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ $# -ne 1 ] ; then
+    echo "Usage:"
+    echo "	$0 hash|hashfile|hccapfile"
+    exit
+fi
+
+
+geneate_words(){
+for prefix in "" "+38"; do
+    for del in "" "-"; do
+        for code in 063 093 067 068 096 097 098 050 066 095 099 092 ; do
+	    for first in {000..999}; do
+        	for second in {00..99}; do
+        	    for third in {00..99}; do
+        		echo "$code$del$first$del$second$del$third"
+		    done
+    		done
+	    done
+	done
+    done
+done
+}
+
+
+DICT=../dict
+mkdir -p ../dict
+geneate_words > ../dict/phones.txt

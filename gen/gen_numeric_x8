@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+
+DICT=../dict
+mkdir -p ../dict
+crunch 8 8 1234567890 > ../dict/8_digits.txt
+
+
+

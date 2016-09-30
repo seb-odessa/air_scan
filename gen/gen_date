@@ -13,6 +13,8 @@ geneate_words(){
     done
 }
 
+DICT=../dict
+mkdir -p ../dict
 geneate_words > ../dict/dates.txt
 
 
